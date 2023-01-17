@@ -1,36 +1,17 @@
+import { ThemeProvider } from '@mui/material'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
-import App from './App'
-import reportWebVitals from './reportWebVitals'
-import { createTheme, ThemeProvider } from '@mui/material'
 import { BrowserRouter } from 'react-router-dom'
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#ededed',
-    },
-    success: {
-      main: '#d6fff4',
-      contrastText: '#00c890',
-    },
-    info: {
-      main: '#fff5e1',
-      contrastText: '#ffb52c',
-    },
-    error: {
-      main: '#ffe4e4',
-      contrastText: '#af0202',
-    },
-  },
-})
+import App from './App'
+import appTheme from './appTheme/AppTheme'
+import './index.css'
+import reportWebVitals from './reportWebVitals'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={appTheme}>
         <App />
       </ThemeProvider>
     </BrowserRouter>
